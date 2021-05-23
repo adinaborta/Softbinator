@@ -1,0 +1,92 @@
+.buna {
+  color: rgb(103, 109, 114);
+}
+
+button.link {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  padding: 0;
+}
+
+button.pageButton {
+  color: white;
+  margin: 20px;
+  width: 200px;
+  padding: 5px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin: 0px 10px;
+}
+
+.progress-bar {
+  background: linear-gradient(to right, #ffb7ad, #90bede);
+  height: 10px;
+}
+
+.message {
+  position: absolute;
+}
+
+div.img-grid-container {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3%;
+}
+
+div.img-grid {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-grid img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.feed-container {
+  margin: 50px 25%;
+}
+
+.feed-img-container {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25%;
+}
+
+.feed-img-container img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 130%;
+  position: absolute;
+  top: 0;
+}
+
+.img-info {
+  position: absolute;
+  bottom: -5%;
+}
