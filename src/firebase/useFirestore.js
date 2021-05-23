@@ -18,7 +18,7 @@ export function useFirestore(collection, uid) {
         setImages(currImgs);
       });
     return () => unsubscribe();
-  }, [collection]);
+  }, [collection, uid]);
 
   return { images };
 }

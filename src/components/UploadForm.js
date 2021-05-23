@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import ProgressBar from "./ProgressBar";
 import "../index.css";
-import { MdAddToPhotos } from "react-icons/md";
 
 export default function UploadForm(props) {
   const [file, setFile] = useState(null);

@@ -21,9 +21,11 @@ export default function Feed() {
                   <IoArrowRedoOutline className="icon" />
                 </UploadForm>
               </div>
-              <div className="feed-img-container" key={image.uid}>
-                <img src={image.url} alt="Unavailable picture"></img>
-              </div>
+              {image.url && (
+                <div className="feed-img-container" key={image.uid}>
+                  <img src={image.url} alt="Unavailable"></img>
+                </div>
+              )}
             </div>
           ))}
       </div>{" "}

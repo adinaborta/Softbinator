@@ -2,6 +2,7 @@ import React from "react";
 import MyNavbar from "./MyNavbar";
 // import { motion } from "framer-motion";
 import { BsPersonFill } from "react-icons/bs";
+import { RiEdit2Line } from "react-icons/ri";
 import { useAuth } from "../firebase/AuthContext";
 import WashPaintBkg from "./WashPaintBkg";
 import ImageGrid from "./ImageGrid";
@@ -14,7 +15,7 @@ function MyProfile() {
       .updateProfile({
         displayName: currentUser.displayName,
         photoURL:
-          "https://firebasestorage.googleapis.com/v0/b/social-media-project-92d0c.appspot.com/o/IMG-20200627-WA0083.jpg?alt=media&token=a996da7b-3681-4709-801b-3e0530135bb7",
+          "https://i.pinimg.com/474x/98/f9/b5/98f9b5986e2d5d8225d97404cf09e1cb.jpg",
       })
       .then(function () {
         console.log("Update successful.");
@@ -45,7 +46,11 @@ function MyProfile() {
             </div>
           )}
 
-          <div style={styles.profileInfo}> Email: {currentUser.email}</div>
+          <div style={styles.profileInfo}>
+            <div></div>
+            Email: {currentUser.email}
+            <RiEdit2Line className="icon" style={{ width: "20px" }} />
+          </div>
         </div>
         <ImageGrid />
       </div>
@@ -56,7 +61,10 @@ function MyProfile() {
 const styles = {
   profileInfo: {
     width: "85%",
-    paddingLeft: "10%",
+    padding: "0 10%",
+    color: "white",
+    display: "flex",
+    flexDirection: "column",
   },
   profileWrapper: {
     display: "flex",
@@ -69,7 +77,7 @@ const styles = {
     width: "15%",
     position: "relative",
     border: "none",
-    background: "rgb(255, 183, 173)",
+    background: "rgb(109, 123, 133)",
     borderRadius: "50%",
     padding: "1%",
   },

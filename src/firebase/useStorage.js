@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { projectStorage, projectFireStore, timestamp } from "./firebase";
+import { projectStorage, projectFireStore } from "./firebase";
 import { useAuth } from "../firebase/AuthContext";
 import { updateUserImages } from "./DatabaseQueries";
 import { v4 as uuidv4 } from "uuid";
@@ -11,7 +11,6 @@ export default function useStorage(file) {
 
   useEffect(() => {
     const storageRef = projectStorage.ref(file.name);
-    const collectionRef = projectFireStore.collection(currentUser.uid);
     storageRef.put(file).on(
       "state_changed",
       (snap) => {
@@ -24,14 +23,6 @@ export default function useStorage(file) {
       async () => {
         const url = await storageRef.getDownloadURL();
         let date = new Date();
-        const createdAt = {
-          year: date.getFullYear(),
-          month: date.getMonth() + 1,
-          day: date.getDate(),
-          hour: date.getHours(),
-          minute: date.getMinutes(),
-          second: date.getSeconds(),
-        };
         projectFireStore
           .collection("users")
           .where("uid", "==", currentUser.uid)
@@ -47,7 +38,7 @@ export default function useStorage(file) {
 
             currImgs.push({
               url: url,
-              createdAt: `${createdAt.year} ${createdAt.month} ${createdAt.day} ${createdAt.hour} ${createdAt.minute} ${createdAt.second}`,
+              createdAt: date,
               uid: uuidv4(),
             });
             updateUserImages(userData, currImgs);

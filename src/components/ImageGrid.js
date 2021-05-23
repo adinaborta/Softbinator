@@ -11,7 +11,7 @@ export default function ImageGrid() {
       {images &&
         images.map((image) => (
           <div className="img-grid" key={image.uid}>
-            <img src={image.url} alt="Unavailable picture"></img>
+            <img src={image.url} alt="Unavailable"></img>
           </div>
         ))}
     </div>
